@@ -1,0 +1,43 @@
+:root {
+    --bg-color: #c5c5cf;
+    --text-color: #000a0a;
+    --bg-light: #fff5ff;
+    --accent-color: #45033d;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+}
+
+ .CalcContainer {
+    background-color: white;
+    flex: 1;
+    border-radius: 14px;
+    padding: 14px;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.display{
+    background-color: var(--bg-light);
+    padding: 14px;
+    border-radius: 8px;
+    border: 2px solid var(--text-color);
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: end;
+    font-size: 1.6em;
+    line-height: 1rem;
+    overflow: hidden;
+}
