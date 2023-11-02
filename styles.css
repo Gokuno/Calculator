@@ -8,6 +8,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -41,3 +42,30 @@ body {
     line-height: 1rem;
     overflow: hidden;
 }
+
+.display h1{
+    white-space: nowrap;
+    text-align: end;
+    font-family: 'Handjet', sans-serif;
+    font-weight: 800;
+}
+
+.BtnsContainer{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 8;
+}
+
+.BtnsRow {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    flex: 4;
+}   
+
+.smlRow {
+    flex: 3 !important;
+}
+
