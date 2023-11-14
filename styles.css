@@ -9,6 +9,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    user-select: none;
+    font-size: 700;
 }
 
 body {
@@ -17,7 +19,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 14px;
+    padding: 30px;
 }
 
  .CalcContainer {
@@ -50,6 +52,7 @@ body {
     text-align: end;
     font-family: 'Handjet', sans-serif;
     font-weight: 800;
+   
 }
 
 .BtnsContainer{
@@ -69,6 +72,7 @@ body {
 
 .smlRow {
     flex: 3 !important;
+    font-weight: bold;
 }
 
 .smlRow > button:nth-child(1),
@@ -76,7 +80,13 @@ body {
     background-color: white !important;
     color: var(--bg-color) !important;
     border: 1px solid var(--bg-color);
-}          
+}       
+
+.smlRow > button:nth-child(3),
+.smlRow > button:nth-child(4) {
+    background-color: orangered !important;
+    border-radius: 30% !important;
+}
 
 .btn {
     background-color: var(--bg-color);
