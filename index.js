@@ -1,12 +1,13 @@
 
 // Variables
-const displayInput = document.getElementById('inputValue');
-const operators = ['-', '+', '%', '*', '/'];
-let operations = [];
-let currValue = '';
+const displayInput = document.getElementById('inputValue'); // Reference to the display element
+const operators = ['-', '+', '%', '*', '/']; // Array of supported operators
+let operations = []; // Array to store operations in the form of ['operand', 'operator', 'operand', ...]
+let currValue = ''; // Current input value
 
 // Functions and Operations
 function handleInteractions(value) {
+     // Determine the type of input value and call the appropriate function
     if (value === '%') {
         handlePercentage();
     } else if (value === 'sqrt') {
@@ -20,19 +21,22 @@ function handleInteractions(value) {
         console.log('clicked numeric value: ', value);
         handleNumericInput(value);
     }
+    // Update the user interface
     updateUI();
 }
 
 function handleNumericInput(value) {
+    // Append numeric input value to the current input
     if (value === '.' && currValue.includes('.')) {
-        return;
+        return; // Prevent adding more than one decimal point
     }
     currValue += value;
 }
 
 function handleOperatorInput(value) {
+    // Handle operator input by pushing the current value and the operator to the operations array
     if (!currValue) {
-        return;
+        return; // Avoid adding an operator without a preceding operand
     }
 
     operations.push(currValue);
@@ -41,8 +45,9 @@ function handleOperatorInput(value) {
 }
 
 function handlePercentage() {
+    // Convert the current value to a percentage
     if (!currValue) {
-        return;
+        return; // Avoid calculating percentage without a value
     }
 
     const percentage = parseFloat(currValue) / 100;
@@ -50,6 +55,7 @@ function handlePercentage() {
 }
 
 function handleSquareRoot() {
+    // Calculate the square root of the current value
     if (currValue < 0) {
         // Handle error for negative numbers if needed
         alert('Cannot calculate square root of a negative number');
@@ -61,12 +67,14 @@ function handleSquareRoot() {
 }
 
 function handleDelete() {
+    // Remove the last character from the current value
     currValue = currValue.slice(0, -1);
 }
 
 function handleEquals() {
+    // Calculate the result of the operations array
     if (operations.length === 0) {
-        return;
+        return; // Avoid calculating without any operation
     }
     let total = operations[0];
     let prevOperator = null;
@@ -86,17 +94,19 @@ function handleEquals() {
         }
     }
     operations = [];
-    currValue = total.toFixed(4);
+    currValue = total.toFixed(4); // Limit the result to four decimal places
     updateUI();
 }
 
 function handleReset() {
+    // Reset the calculator state
     currValue = '';
     operations = [];
     updateUI();
 }
 
 function updateUI() {
+    // Update the display element with the current operations and input value
     const displayString = operations.join(' ') + currValue;
-    displayInput.innerText = displayString.trim() ? displayString : '0';
+    displayInput.innerText = displayString.trim() ? displayString : '0'; // Display the result or '0' if no input
 }
