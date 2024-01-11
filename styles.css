@@ -1,18 +1,22 @@
+/* Define custom variables for colors */
 :root {
     --bg-color: #12122d;
     --text-color: #ecf7f7;
     --bg-light: rgb(35, 1, 35);
     --accent-color: #45033d;
 }
+
+/* Reset default styles for all elements */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     user-select: none;
-    font-size: 700;
+    font-size: 700; 
 }
 
+/* Styling for the entire page */
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -22,7 +26,8 @@ body {
     padding: 30px;
 }
 
- .CalcContainer {
+/* Styling for the calculator container */
+.CalcContainer {
     background-color: white;
     flex: 1;
     border-radius: 14px;
@@ -33,7 +38,8 @@ body {
     min-height: 400px;
 }
 
-.display{
+/* Styling for the display area */
+.display {
     background-color: var(--bg-light);
     padding: 14px;
     border-radius: 8px;
@@ -47,15 +53,15 @@ body {
     overflow: hidden;
 }
 
-.display h1{
+.display h1 {
     white-space: nowrap;
     text-align: end;
     font-family: 'Handjet', sans-serif;
     font-weight: 800;
-   
 }
 
-.BtnsContainer{
+/* Styling for the buttons container */
+.BtnsContainer {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -63,24 +69,27 @@ body {
     flex: 8;
 }
 
+/* Styling for each row of buttons */
 .BtnsRow {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 14px;
     flex: 4;
-}   
+}
 
+/* Styling for smaller rows with bold font */
 .smlRow {
     flex: 3 !important;
     font-weight: bold;
 }
 
+/* Specific styling for buttons in the smaller row */
 .smlRow > button:nth-child(1),
 .smlRow > button:nth-child(2) {
     background-color: white !important;
     color: var(--bg-color) !important;
     border: 1px solid var(--bg-color);
-}       
+}
 
 .smlRow > button:nth-child(3),
 .smlRow > button:nth-child(4) {
@@ -88,6 +97,7 @@ body {
     border-radius: 30% !important;
 }
 
+/* Common styling for all buttons */
 .btn {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -99,14 +109,17 @@ body {
     transition-duration: 200ms;
 }
 
+/* Hover effect for buttons */
 .btn:hover {
     opacity: 0.7;
 }
 
+/* Styling for the text inside buttons */
 .btn p {
     font-size: 1.2rem;
 }
 
+/* Specific styling for the third button in the last row */
 .BtnsRow:last-child > .btn:nth-child(3) {
     background-color: white !important;
     color: var(--bg-color) !important;
