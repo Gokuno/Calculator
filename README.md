@@ -24,8 +24,8 @@ A simple and responsive calculator built with HTML, CSS, and JavaScript. This ap
 ## How to Use
 
 1. **Clone the repository:**
-   ```bash or terminal
-
+   ```bash 
+git clone <[repository-url](https://github.com/Gokuno/Calculator/)>
 ## Code Explanation
 - index.html
 This file contains the structure of the calculator, including the display and buttons for input.
